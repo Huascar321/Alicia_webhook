@@ -20,18 +20,18 @@ restService.post("/echo", function(req, res) {
     req.body.queryResult.parameters.echoText
       ? req.body.queryResult.parameters.echoText
       : "Seems like some problem. Speak again."+req.body;
+  var respuesta = "Prueba de respuesta desde el webhook";
   return res.json({
 
-  "fulfillmentText": "Prueba de edicion, tu palabra es: ",
+  "fulfillmentText": respuesta,
   "fulfillmentMessages": [
     {
       "text": {
-        "text": "Prueba de edicion, tu palabra es: " //[speech]
+        "text": [respuesta] //[speech]
       }
     }
   ],
   "source": "<webhookpn1>"
-
 
   });
 });
