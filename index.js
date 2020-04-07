@@ -26,7 +26,7 @@ restService.post("/echo", function(req, res) {
   "fulfillmentMessages": [
     {
       "text": {
-        "text": [speech]
+        "text": [speech]+' editado'
       }
     }
   ],
