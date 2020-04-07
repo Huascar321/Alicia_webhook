@@ -22,11 +22,11 @@ restService.post("/echo", function(req, res) {
       : "Seems like some problem. Speak again."+req.body;
   return res.json({
 
-  "fulfillmentText": speech,
+  "fulfillmentText": "Prueba de edicion, tu palabra es: ",
   "fulfillmentMessages": [
     {
       "text": {
-        "text": [speech]+' editado'
+        "text": "Prueba de edicion, tu palabra es: " //[speech]
       }
     }
   ],
