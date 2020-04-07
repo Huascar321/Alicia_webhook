@@ -24,7 +24,22 @@ restService.use(
 restService.use(bodyParser.json());
 
 function welcome(agent) {
-  agent.add(`Hola carambola`);
+  restService.post("/echo", function(req, res) {
+    var respuesta = "Hola carambola";
+    return res.json({
+  
+    "fulfillmentText": respuesta,
+    "fulfillmentMessages": [
+      {
+        "text": {
+          "text": [respuesta] //[speech]
+        }
+      }
+    ],
+    "source": "<webhookpn1>"
+  
+    });
+  });
 }
 
 restService.post("/echo", function(req, res) {
